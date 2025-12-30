@@ -1,7 +1,20 @@
-const button = document.getElementById('colorButton');
+document.addEventListener('DOMContentLoaded', () => {
+  const buttons = document.querySelectorAll('.tab-btn');
+  const tabs = document.querySelectorAll('.tab-content');
+  const body = document.body;
 
-button.addEventListener('click', () => {
-  // Pick a random color and apply it to the background
-  const randomColor = `hsl(${Math.floor(Math.random() * 360)}, 70%, 50%)`;
-  document.body.style.backgroundColor = randomColor;
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Clear active state
+      buttons.forEach(b => b.classList.remove('active'));
+      tabs.forEach(t => t.classList.remove('active'));
+
+      // Activate clicked tab
+      btn.classList.add('active');
+      document.getElementById(btn.dataset.target).classList.add('active');
+
+      // Change background color
+      body.style.backgroundColor = btn.dataset.color;
+    });
+  });
 });
