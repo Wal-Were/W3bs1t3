@@ -8,7 +8,7 @@
 
 body {
   transition: background-color 0.4s ease;
-  background-color: #b91c1c;
+  background-color: #1f1b24; /* initial About Me color */
   color: white;
   min-height: 100vh;
   display: flex;
@@ -25,14 +25,14 @@ body {
 }
 
 .tab-btn {
-  background: transparent;
-  color: white;
+  background: white;
+  color: black;
   border: 2px solid white;
   padding: 10px 20px;
   cursor: pointer;
   font-size: 16px;
   border-radius: 6px;
-  transition: all 0.2s ease;
+  transition: all 0.5s ease;
 }
 
 .tab-btn:hover {
@@ -40,8 +40,8 @@ body {
 }
 
 .tab-btn.active {
-  background: white;
-  color: black;
+  background: transparent;
+  color: white;
 }
 
 /* === Hero Header === */
@@ -96,40 +96,104 @@ main {
 
 .tab-content {
   display: none;
-  animation: fade 0.3s ease;
-  background: rgba(0,0,0,0.2);
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  opacity: 0;
+  transition: opacity 0.4s ease, height 0.4s ease;
+  height: 0;
+  overflow: hidden;
   margin-bottom: 40px;
 }
 
 .tab-content.active {
   display: block;
+  opacity: 1;
+  height: auto;
 }
 
-.tab-content h2, .tab-content h3 {
+/* === About Cards === */
+.about-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 25px;
+  margin-bottom: 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.about-card h2, .about-card h3 {
   margin-bottom: 15px;
 }
 
-.tab-content p, .tab-content li {
+.about-card p, .about-card li {
   margin-bottom: 10px;
   line-height: 1.6;
 }
 
-.tab-content ul {
+.about-card ul {
   list-style: disc;
   margin-left: 20px;
 }
 
+/* === Projects Cards === */
+.project-card {
+  aspect-ratio: 1 / 1;
+  min-height: auto;
+  border-radius: 10px;
+  padding: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  background-color: #121212;
+  border: 1px solid #333;
+  transition: transform 0.2s ease, border 0.2s ease;
+}
+
+.project-card:hover {
+  transform: scale(1.02);
+  border-color: #555;
+}
+
+.project-card h4 {
+  margin-top: 0;
+  font-size: 24px;
+  color: #ffffff;
+}
+
+.project-card p {
+  font-size: 18px;
+  color: #dddddd;
+  line-height: 1.6;
+}
+
+.project-card a {
+  margin-top: auto;
+  align-self: start;
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: #8a2be2;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.project-card a:hover {
+  background-color: #b266ff;
+}
+
+/* === Fade Animation for Hero Sections (Optional) === */
 @keyframes fade {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
 /* === Responsive === */
-
-/* Tablet / small desktop */
 @media (max-width: 768px) {
   .hero {
     flex-direction: column;
@@ -142,11 +206,10 @@ main {
 
   main {
     padding: 20px;
-    text-align: left;
+    text-align: center;
   }
 }
 
-/* Mobile / phones */
 @media (max-width: 500px) {
   .hero-text h1 {
     font-size: 22px;
@@ -174,19 +237,29 @@ main {
     padding: 8px 15px;
   }
 
-  .tab-content {
+  .about-card {
     padding: 20px;
   }
 
-  .tab-content p, .tab-content li {
+  .about-card p, .about-card li {
     font-size: 14px;
   }
 
-  .tab-content h2 {
+  .about-card h2 {
     font-size: 20px;
   }
 
-  .tab-content h3 {
+  .about-card h3 {
     font-size: 18px;
+  }
+
+  .project-card {
+    padding: 15px;
+    font-size: 16px;
+  }
+
+  .project-card a {
+    padding: 10px 20px;
+    font-size: 14px;
   }
 }
