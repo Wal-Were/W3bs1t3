@@ -8,7 +8,7 @@
 
 body {
   transition: background-color 0.4s ease;
-  background-color: #1f1b24; /* initial About Me color */
+  background-color: #1f1b24;
   color: white;
   min-height: 100vh;
   display: flex;
@@ -44,7 +44,7 @@ body {
   color: white;
 }
 
-/* === Hero Header === */
+/* === Hero === */
 .hero {
   display: flex;
   justify-content: space-between;
@@ -73,10 +73,6 @@ body {
   font-style: italic;
   color: #d1d1d1;
   margin-top: 5px;
-}
-
-.hero-image {
-  flex: 0 0 auto;
 }
 
 .hero-image img {
@@ -124,73 +120,89 @@ main {
   background: rgba(255, 255, 255, 0.1);
 }
 
-.about-card h2, .about-card h3 {
-  margin-bottom: 15px;
+/* === Projects Section === */
+.project-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 30px 0;
 }
 
-.about-card p, .about-card li {
-  margin-bottom: 10px;
-  line-height: 1.6;
+.proj-btn {
+  background: white;
+  color: black;
+  border: 2px solid white;
+  padding: 10px 25px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.4s ease;
 }
 
-.about-card ul {
-  list-style: disc;
-  margin-left: 20px;
+.proj-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
 }
 
-/* === Projects Cards === */
-.project-card {
-  aspect-ratio: 1 / 1;
-  min-height: auto;
-  border-radius: 10px;
-  padding: 20px;
+.proj-btn.active {
+  background: transparent;
   color: white;
+}
+
+.project-contents {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  overflow: hidden;
-  background-color: #121212;
-  border: 1px solid #333;
-  transition: transform 0.2s ease, border 0.2s ease;
+  align-items: center;
+}
+
+.project-group {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-group.active {
+  display: block;
+  opacity: 1;
+}
+
+.project-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 25px;
+  width: min(100%, 400px);
+  text-align: left;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, background 0.3s ease;
 }
 
 .project-card:hover {
-  transform: scale(1.02);
-  border-color: #555;
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .project-card h4 {
-  margin-top: 0;
-  font-size: 24px;
-  color: #ffffff;
+  font-size: 22px;
+  margin-bottom: 10px;
 }
 
 .project-card p {
-  font-size: 18px;
-  color: #dddddd;
-  line-height: 1.6;
+  font-size: 16px;
+  color: #ddd;
+  margin-bottom: 20px;
 }
 
 .project-card a {
-  margin-top: auto;
-  align-self: start;
-  padding: 12px 24px;
-  font-size: 16px;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 8px;
   background-color: #8a2be2;
   color: white;
   text-decoration: none;
-  border-radius: 8px;
-  transition: background-color 0.2s ease;
+  transition: background 0.3s ease;
 }
 
 .project-card a:hover {
   background-color: #b266ff;
-}
-
-/* === Fade Animation for Hero Sections (Optional) === */
-@keyframes fade {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
 }
 
 /* === Responsive === */
@@ -200,66 +212,26 @@ main {
     text-align: left;
   }
 
-  .hero-image img {
-    width: 150px;
-  }
-
   main {
     padding: 20px;
-    text-align: left;
-  }
-}
-
-@media (max-width: 500px) {
-  .hero-text h1 {
-    font-size: 22px;
-  }
-
-  .hero-text p {
-    font-size: 14px;
-  }
-
-  .hero-text .tagline {
-    font-size: 12px;
-  }
-
-  .hero-image img {
-    width: 120px;
-    margin: 10px auto 0;
-  }
-
-  main {
-    padding: 15px;
-  }
-
-  .tab-btn {
-    font-size: 14px;
-    padding: 8px 15px;
-  }
-
-  .about-card {
-    padding: 20px;
-  }
-
-  .about-card p, .about-card li {
-    font-size: 14px;
-  }
-
-  .about-card h2 {
-    font-size: 20px;
-  }
-
-  .about-card h3 {
-    font-size: 18px;
   }
 
   .project-card {
-    padding: 15px;
-    font-size: 16px;
+    width: 100%;
   }
+}
+.projects-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
 
-  .project-card a {
-    padding: 10px 20px;
-    font-size: 14px;
-  }
+.projects-header h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.projects-subtext {
+  color: #cfcfcf;
+  font-style: italic;
+  font-size: 16px;
 }
