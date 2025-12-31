@@ -1,4 +1,4 @@
-/* === Reset === */
+/* === Reset / Base === */
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +6,6 @@
   font-family: system-ui, sans-serif;
 }
 
-/* === Body === */
 body {
   transition: background-color 0.4s ease;
   background-color: #b91c1c;
@@ -129,6 +128,8 @@ main {
 }
 
 /* === Responsive === */
+
+/* Tablet / small desktop */
 @media (max-width: 768px) {
   .hero {
     flex-direction: column;
@@ -142,5 +143,50 @@ main {
   main {
     padding: 20px;
     text-align: center;
+  }
+}
+
+/* Mobile / phones */
+@media (max-width: 500px) {
+  .hero-text h1 {
+    font-size: 22px;
+  }
+
+  .hero-text p {
+    font-size: 14px;
+  }
+
+  .hero-text .tagline {
+    font-size: 12px;
+  }
+
+  .hero-image img {
+    width: 120px;
+    margin: 10px auto 0;
+  }
+
+  main {
+    padding: 15px;
+  }
+
+  .tab-btn {
+    font-size: 14px;
+    padding: 8px 15px;
+  }
+
+  .tab-content {
+    padding: 20px;
+  }
+
+  .tab-content p, .tab-content li {
+    font-size: 14px;
+  }
+
+  .tab-content h2 {
+    font-size: 20px;
+  }
+
+  .tab-content h3 {
+    font-size: 18px;
   }
 }
