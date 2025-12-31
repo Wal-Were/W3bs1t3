@@ -31,7 +31,6 @@
   <main>
     <!-- About Me -->
     <section id="about" class="tab-content active">
-
       <div class="about-card">
         <h2>Motto</h2>
         <p><strong>"By logic, by purpose, by order"</strong></p>
@@ -88,14 +87,40 @@
           <li>Resourceful</li>
         </ul>
       </div>
-
     </section>
 
     <!-- Projects -->
     <section id="projects" class="tab-content">
-      <h2>Projects</h2>
-      <p>Under Renovation</p>
-    </section>
+  <div class="projects-header">
+    <h2>Projects</h2>
+    <p class="projects-subtext">A split between sleepless academic work and dangerously passionate personal projects.</p>
+  </div>
+
+  <div class="project-tabs">
+    <button class="proj-btn" data-project="school">School</button>
+    <button class="proj-btn" data-project="personal">Personal</button>
+  </div>
+
+  <div class="project-contents">
+    <!-- School Projects -->
+    <div id="school" class="project-group">
+      <div class="project-card">
+        <h4>KLASECO</h4>
+        <p>A smart classroom ecosystem automating energy and attendance management.</p>
+        <a href="#">View Demo</a>
+      </div>
+    </div>
+
+    <!-- Personal Projects -->
+    <div id="personal" class="project-group">
+      <div class="project-card">
+        <h4>The Walk</h4>
+        <p>A narrative exploration game about souls, regret, and reflection — built in Unreal Engine.</p>
+        <a href="#">View Demo</a>
+      </div>
+    </div>
+  </div>
+</section>
 
     <!-- Contact -->
     <section id="contact" class="tab-content">
