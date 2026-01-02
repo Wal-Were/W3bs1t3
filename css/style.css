@@ -121,6 +121,22 @@ main {
 }
 
 /* === Projects Section === */
+.projects-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.projects-header h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.projects-subtext {
+  color: #cfcfcf;
+  font-style: italic;
+  font-size: 16px;
+}
+
 .project-tabs {
   display: flex;
   justify-content: center;
@@ -165,11 +181,17 @@ main {
   opacity: 1;
 }
 
+/* === Project Grid & Cards === */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
 .project-card {
   background: rgba(255, 255, 255, 0.05);
   border-radius: 12px;
   padding: 25px;
-  width: min(100%, 400px);
   text-align: left;
   box-shadow: 0 8px 20px rgba(0,0,0,0.3);
   transition: transform 0.3s ease, background 0.3s ease;
@@ -205,6 +227,21 @@ main {
   background-color: #b266ff;
 }
 
+/* === Tag Colors === */
+.tag {
+  font-weight: bold;
+  margin-right: 4px;
+}
+
+.tag.test { color: #9b59b6; }    /* Purple for experiments */
+.tag.final { color: #2ecc71; }   /* Green for finals */
+.tag.archive { color: #bdc3c7; } /* Gray for archives */
+.tag.personal { color: #ffa64d; }/* Orange for personal */
+
+/* === Colored Side Borders === */
+.project-card.serious { border-left: 6px solid #7a7a7a; }
+.project-card.sarcastic { border-left: 6px solid #ff9900; }
+
 /* === Responsive === */
 @media (max-width: 768px) {
   .hero {
@@ -219,19 +256,4 @@ main {
   .project-card {
     width: 100%;
   }
-}
-.projects-header {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.projects-header h2 {
-  font-size: 36px;
-  margin-bottom: 10px;
-}
-
-.projects-subtext {
-  color: #cfcfcf;
-  font-style: italic;
-  font-size: 16px;
 }
